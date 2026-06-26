@@ -1,5 +1,24 @@
+const root = document.documentElement;
 const revealItems = document.querySelectorAll(".reveal");
 const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+const themeToggle = document.querySelector(".theme-toggle");
+const toggleText = document.querySelector(".toggle-text");
+
+const storedTheme = localStorage.getItem("theme");
+const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const initialTheme = storedTheme || (systemPrefersDark ? "dark" : "light");
+
+function setTheme(theme) {
+  root.dataset.theme = theme;
+  if (toggleText) toggleText.textContent = theme === "dark" ? "Light" : "Dark";
+  localStorage.setItem("theme", theme);
+}
+
+setTheme(initialTheme);
+
+themeToggle?.addEventListener("click", () => {
+  setTheme(root.dataset.theme === "dark" ? "light" : "dark");
+});
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
