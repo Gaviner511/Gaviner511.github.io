@@ -214,7 +214,6 @@ h3 {
 .prose,
 .section-head,
 .experience-body,
-.portfolio-copy,
 .skills-list,
 .education-list,
 .contact-section p {
@@ -312,7 +311,8 @@ h3 {
 }
 
 .quick-facts,
-.portfolio-feature,
+.project-showcase,
+.impact-grid article,
 .simple-grid article,
 .portfolio-grid article,
 .case-grid article,
@@ -382,12 +382,18 @@ h3 {
 }
 
 .section {
-  margin: 22px 28px;
-  padding: 52px 44px;
+  margin: 24px 28px;
+  padding: 68px 52px;
   border: 1px solid var(--line);
   border-radius: 24px;
   background: var(--surface);
   box-shadow: 0 14px 44px rgba(31, 41, 51, 0.045);
+}
+
+#featured-project {
+  background:
+    radial-gradient(circle at 90% 8%, rgba(47, 125, 126, 0.12), transparent 22rem),
+    rgba(255, 255, 255, 0.7);
 }
 
 .reveal {
@@ -536,13 +542,14 @@ li {
   margin: 6px 0;
 }
 
-.portfolio-feature {
+.project-showcase {
   position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-columns: minmax(0, 0.62fr) minmax(500px, 1.38fr);
-  gap: 32px;
-  padding: 32px;
+  grid-template-columns: minmax(0, 0.72fr) minmax(420px, 1.28fr);
+  gap: 34px;
+  align-items: center;
+  padding: 34px;
   border-color: rgba(47, 125, 126, 0.16);
   background:
     radial-gradient(circle at 12% 10%, rgba(47, 125, 126, 0.1), transparent 18rem),
@@ -552,7 +559,7 @@ li {
     box-shadow 220ms ease;
 }
 
-.portfolio-feature::after {
+.project-showcase::after {
   position: absolute;
   inset: auto -3rem -4rem auto;
   width: 14rem;
@@ -564,22 +571,23 @@ li {
   pointer-events: none;
 }
 
-.portfolio-feature:hover {
+.project-showcase:hover {
   box-shadow: 0 22px 55px rgba(31, 41, 51, 0.1);
   transform: translateY(-3px);
 }
 
-.portfolio-feature .portfolio-copy {
+.project-intro {
   position: relative;
   z-index: 1;
   padding-top: 4px;
 }
 
-.portfolio-copy p {
-  max-width: 620px;
+.project-intro p {
+  max-width: 610px;
+  color: var(--muted);
 }
 
-.inline-actions {
+.project-actions {
   margin-top: 18px;
 }
 
@@ -591,9 +599,40 @@ li {
   text-underline-offset: 4px;
 }
 
-.project-shot {
+.app-preview {
   position: relative;
   z-index: 1;
+  padding: 12px;
+  border: 1px solid rgba(31, 41, 51, 0.11);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 18px 42px rgba(31, 41, 51, 0.08);
+}
+
+.app-topbar {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 0 8px 10px;
+  color: var(--soft);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.app-topbar span {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: rgba(47, 125, 126, 0.28);
+}
+
+.app-topbar strong {
+  margin-left: 6px;
+}
+
+.project-shot {
   margin: 0;
 }
 
@@ -611,7 +650,7 @@ li {
   border-radius: 18px;
 }
 
-.portfolio-feature:hover .project-shot img {
+.project-showcase:hover .project-shot img {
   transform: scale(1.018);
 }
 
@@ -681,29 +720,66 @@ li {
 .workflow-steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  margin-top: 18px;
+  gap: 10px;
+  margin-top: 22px;
 }
 
 .workflow-steps span {
   position: relative;
   display: grid;
-  min-height: 46px;
+  min-height: 52px;
   place-items: center;
   padding: 0 8px;
-  border: 1px solid rgba(47, 125, 126, 0.16);
-  border-radius: 14px;
+  border: 1px solid rgba(47, 125, 126, 0.18);
+  border-radius: 999px;
   color: var(--ink);
-  background: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.82), rgba(223, 243, 241, 0.46));
   font-size: 12px;
   font-weight: 760;
   text-align: center;
 }
 
+.workflow-steps span:not(:last-child)::after {
+  position: absolute;
+  right: -10px;
+  width: 10px;
+  height: 1px;
+  content: "";
+  background: rgba(47, 125, 126, 0.32);
+}
+
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.impact-grid article {
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.impact-grid strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent-deep);
+  font-size: clamp(22px, 2.4vw, 30px);
+  line-height: 1.05;
+  font-family: "Manrope", "Inter", sans-serif;
+  font-weight: 800;
+}
+
+.impact-grid span {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+
 .feature-grid,
 .education-cert-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin-top: 18px;
 }
@@ -713,6 +789,58 @@ li {
   border: 1px solid var(--line);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.72);
+}
+
+.feature-grid article p {
+  color: var(--muted);
+}
+
+.case-grid article {
+  display: flex;
+  flex-direction: column;
+}
+
+.case-grid h4 {
+  margin: 14px 0 4px;
+  color: var(--soft);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.case-grid p {
+  color: var(--muted);
+}
+
+.case-grid .result-line {
+  margin-top: auto;
+  padding: 12px 14px;
+  border: 1px solid rgba(47, 125, 126, 0.16);
+  border-radius: 16px;
+  color: var(--ink);
+  background: rgba(223, 243, 241, 0.5);
+  font-weight: 700;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.skill-tags span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 31px;
+  padding: 0 11px;
+  border: 1px solid rgba(31, 41, 51, 0.09);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.62);
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .skills-list,
@@ -807,7 +935,8 @@ li {
   .about-section,
   .about-content,
   .experience-item,
-  .portfolio-feature,
+  .project-showcase,
+  .impact-grid,
   .feature-grid,
   .education-cert-grid,
   .resume-section,
@@ -827,7 +956,9 @@ li {
   .metrics-section,
   .simple-grid,
   .case-grid,
-  .skills-grid {
+  .skills-grid,
+  .feature-grid,
+  .impact-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -856,6 +987,10 @@ li {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .workflow-steps span:not(:last-child)::after {
+    display: none;
+  }
+
   .contact-actions {
     justify-content: flex-start;
   }
@@ -876,6 +1011,15 @@ li {
     margin-right: 20px;
   }
 
+  .section {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .project-showcase {
+    padding: 22px;
+  }
+
   h1 {
     font-size: 39px;
   }
@@ -888,7 +1032,9 @@ li {
   .portfolio-grid,
   .simple-grid,
   .case-grid,
-  .skills-grid {
+  .skills-grid,
+  .feature-grid,
+  .impact-grid {
     grid-template-columns: 1fr;
   }
 
