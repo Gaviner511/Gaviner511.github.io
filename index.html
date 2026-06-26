@@ -8,6 +8,12 @@
       name="description"
       content="Personal website for Gavin Wang, a project and operations coordinator focused on AI workflow automation, process improvement, and execution quality."
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -33,11 +39,10 @@
         <div>
           <p class="eyebrow">Project & Operations Coordinator | AI Workflow Builder</p>
           <h1>Gavin Wang</h1>
-          <p class="tagline">I help teams turn messy workflows into structured, repeatable systems.</p>
+          <p class="tagline">Project & Operations Coordinator building structured systems for messy workflows.</p>
           <p class="hero-text">
-            Hi, I am Gavin, a CAPM-certified project and operations professional with experience in
-            workflow coordination, stakeholder communication, process improvement, and AI-enabled
-            automation.
+            I combine project coordination, operations experience, and AI workflow automation to
+            help teams turn repetitive processes into clear, repeatable systems.
           </p>
           <div class="hero-actions" aria-label="Primary links">
             <a class="button primary" href="#featured-project">View Featured Project</a>
@@ -46,49 +51,58 @@
             <a class="button" href="mailto:Gavinwang511@gmail.com">Email Me</a>
           </div>
         </div>
-        <aside class="quick-facts" aria-label="Quick facts">
-          <p class="card-label">Candidate Snapshot</p>
-          <h2>Profile</h2>
-          <dl>
-            <div>
-              <dt>Current focus</dt>
-              <dd>Operations, project coordination, business operations, AI workflow automation, startup execution</dd>
-            </div>
-            <div>
-              <dt>Credentials</dt>
-              <dd>CAPM Certified; NYU M.S. Project Management</dd>
-            </div>
-            <div>
-              <dt>Location</dt>
-              <dd>San Jose, CA</dd>
-            </div>
-            <div>
-              <dt>Languages</dt>
-              <dd>English and Mandarin Chinese</dd>
-            </div>
-          </dl>
-        </aside>
+        <figure class="hero-portrait" aria-label="Portrait of Gavin Wang">
+          <img src="assets/profile-gavin.jpg" alt="Gavin Wang professional headshot" />
+          <figcaption>
+            <span>CAPM Certified</span>
+            <span>NYU M.S. Project Management</span>
+            <span>San Jose, CA</span>
+          </figcaption>
+        </figure>
       </section>
 
       <section class="section about-section reveal" id="about">
-        <h2>About Me</h2>
-        <div class="prose">
-          <p>
-            I am a project and operations-focused graduate student at New York University, pursuing
-            an M.S. in Project Management, with a background in risk management, business
-            operations, HR coordination, real estate operations, and digital content projects.
-          </p>
-          <p>
-            My work usually sits at the intersection of coordination, systems, and execution:
-            organizing stakeholders, tracking timelines, improving workflows, and turning messy
-            information into clear next steps.
-          </p>
-          <p>
-            Recently, I have been building an AI-native job application automation platform that
-            converts resumes into structured candidate profiles and streamlines repetitive job
-            application workflows. This project reflects how I like to work: identify an inefficient
-            process, break it down, design a repeatable system, test it, and improve it.
-          </p>
+        <div class="section-title-block">
+          <p class="eyebrow">About</p>
+          <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+          <div class="prose">
+            <p>
+              I am a project and operations-focused graduate student at New York University,
+              pursuing an M.S. in Project Management, with a background in risk management, business
+              operations, HR coordination, real estate operations, and digital content projects.
+            </p>
+            <p>
+              My work usually sits at the intersection of coordination, systems, and execution:
+              organizing stakeholders, tracking timelines, improving workflows, and turning messy
+              information into clear next steps.
+            </p>
+            <p>
+              Recently, I have been building an AI-native job application automation platform that
+              converts resumes into structured candidate profiles and streamlines repetitive job
+              application workflows. This project reflects how I like to work: identify an
+              inefficient process, break it down, design a repeatable system, test it, and improve it.
+            </p>
+          </div>
+          <aside class="quick-facts" aria-label="Candidate snapshot">
+            <p class="card-label">Candidate Snapshot</p>
+            <h3>Profile</h3>
+            <dl>
+              <div>
+                <dt>Current focus</dt>
+                <dd>Operations, project coordination, business operations, AI workflow automation, startup execution</dd>
+              </div>
+              <div>
+                <dt>Credentials</dt>
+                <dd>CAPM Certified; NYU M.S. Project Management</dd>
+              </div>
+              <div>
+                <dt>Languages</dt>
+                <dd>English and Mandarin Chinese</dd>
+              </div>
+            </dl>
+          </aside>
         </div>
       </section>
 
@@ -120,9 +134,8 @@
           <p class="eyebrow">Featured Project</p>
           <h2>AI-Native Job Application Automation Platform</h2>
           <p>
-            A Chrome-based workflow assistant that converts unstructured resumes into structured
-            candidate profiles and helps users complete repetitive job applications faster, with
-            review and confirmation controls.
+            A personal productivity tool that helps job seekers turn resumes into structured
+            profiles and complete applications faster, with review and confirmation controls.
           </p>
         </div>
 
@@ -148,11 +161,19 @@
             </p>
 
             <div class="tag-list" aria-label="Project tags">
+              <span>AI Workflow Automation</span>
               <span>Chrome Extension</span>
+              <span>Field Matching</span>
               <span>Process Improvement</span>
               <span>Product Thinking</span>
               <span>UX Workflow</span>
-              <span>Job Application Automation</span>
+            </div>
+
+            <div class="workflow-steps" aria-label="Featured project workflow">
+              <span>Resume</span>
+              <span>Profile</span>
+              <span>Field Match</span>
+              <span>User Review</span>
             </div>
 
             <div class="inline-actions">
