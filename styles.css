@@ -2,8 +2,8 @@
   --bg: #f4f1ea;
   --surface: #fbf8f0;
   --text: #1c1b18;
-  --muted: #6f6a61;
-  --line: rgba(28, 27, 24, 0.14);
+  --muted: #5f5a52;
+  --line: rgba(28, 27, 24, 0.18);
   --accent: #6d6a9f;
   --accent-soft: rgba(109, 106, 159, 0.12);
   --surface-soft: rgba(251, 248, 240, 0.72);
@@ -14,8 +14,8 @@
   --bg: #111312;
   --surface: #191b1a;
   --text: #eeeae2;
-  --muted: #aaa39a;
-  --line: rgba(238, 234, 226, 0.14);
+  --muted: #b8b0a6;
+  --line: rgba(238, 234, 226, 0.18);
   --accent: #b8b4ff;
   --accent-soft: rgba(184, 180, 255, 0.12);
   --surface-soft: rgba(25, 27, 26, 0.72);
@@ -39,7 +39,8 @@ body {
   font-family:
     "Inter", "Aptos", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
     sans-serif;
-  line-height: 1.7;
+  font-size: 16.5px;
+  line-height: 1.72;
 }
 
 body::before {
@@ -203,11 +204,11 @@ a {
 }
 
 .hero {
-  min-height: 88vh;
+  min-height: 76vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 38px 0 72px;
+  padding: 38px 0 84px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -299,25 +300,21 @@ h1 {
   color: var(--text);
 }
 
-.snapshot,
 .proof-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   border-bottom: 1px solid var(--line);
 }
 
-.snapshot div,
 .proof-strip div {
   padding: 24px 20px 24px 0;
   border-right: 1px solid var(--line);
 }
 
-.snapshot div:not(:first-child),
 .proof-strip div:not(:first-child) {
   padding-left: 20px;
 }
 
-.snapshot div:last-child,
 .proof-strip div:last-child {
   border-right: 0;
 }
@@ -344,7 +341,7 @@ h1 {
   display: block;
   margin-bottom: 7px;
   font-family: "Manrope", "Inter", sans-serif;
-  font-size: clamp(28px, 4.5vw, 46px);
+  font-size: clamp(26px, 4vw, 38px);
   line-height: 1;
   letter-spacing: -0.04em;
 }
@@ -353,7 +350,7 @@ h1 {
   display: grid;
   grid-template-columns: 150px minmax(0, 1fr);
   gap: 52px;
-  padding: 92px 0;
+  padding: 98px 0;
   border-bottom: 1px solid var(--line);
 }
 
@@ -381,6 +378,44 @@ h1 {
   max-width: 720px;
 }
 
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 245px;
+  gap: 40px;
+  align-items: start;
+}
+
+.about-section {
+  padding-top: 76px;
+  padding-bottom: 82px;
+}
+
+.quiet-heading span,
+.quiet-heading h2 {
+  color: var(--muted);
+}
+
+.about-section .snapshot {
+  display: grid;
+  gap: 0;
+  padding-top: 2px;
+  border-top: 1px solid var(--line);
+}
+
+.about-section .snapshot div {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-section .snapshot span {
+  font-size: 10px;
+}
+
+.about-section .snapshot strong {
+  color: var(--text);
+  font-size: 12.5px;
+}
+
 .prose p,
 .project-note p,
 .case-list p,
@@ -393,15 +428,23 @@ h1 {
 
 .prose p {
   margin-bottom: 18px;
-  font-size: 17px;
+  font-size: 17.5px;
 }
 
 .project-section {
   grid-template-columns: 150px minmax(0, 1fr);
+  padding-top: 112px;
+  padding-bottom: 108px;
 }
 
 .project-note {
   min-width: 0;
+  padding: 34px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background:
+    linear-gradient(180deg, var(--surface-soft), transparent 68%),
+    transparent;
 }
 
 .project-header {
@@ -414,13 +457,13 @@ h1 {
 .project-header h3 {
   max-width: 720px;
   margin-bottom: 18px;
-  font-size: clamp(32px, 4.8vw, 58px);
-  line-height: 1;
+  font-size: clamp(38px, 5.4vw, 68px);
+  line-height: 0.98;
 }
 
 .project-header p {
   max-width: 720px;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .text-link {
@@ -488,7 +531,7 @@ h1 {
   display: block;
   margin-bottom: 8px;
   font-family: "Manrope", "Inter", sans-serif;
-  font-size: 24px;
+  font-size: clamp(24px, 2.8vw, 32px);
   line-height: 1.05;
   letter-spacing: -0.03em;
 }
@@ -502,7 +545,7 @@ h1 {
 
 .artifact {
   margin: 42px 0 0;
-  padding: 14px;
+  padding: 12px;
   border: 1px solid var(--line);
   border-radius: 20px;
   background: var(--surface-soft);
@@ -594,7 +637,7 @@ li {
 
 .case-list p,
 .case-list strong {
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .case-list strong {
@@ -632,7 +675,7 @@ li {
 }
 
 .contact-note > p {
-  font-size: 17px;
+  font-size: 17.5px;
 }
 
 .contact-grid {
@@ -736,6 +779,11 @@ li {
     grid-template-columns: 1fr;
     gap: 28px;
     padding: 68px 0;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .section-heading {
