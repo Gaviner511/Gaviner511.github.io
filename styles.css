@@ -170,7 +170,7 @@ a {
 .theme-toggle {
   position: fixed;
   top: 22px;
-  right: max(24px, calc((100vw - 1180px) / 2));
+  right: max(16px, calc((100vw - 1180px) / 2 - 72px));
   z-index: 20;
   display: inline-flex;
   align-items: center;
