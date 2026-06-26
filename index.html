@@ -11,12 +11,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
+      <span class="toggle-dot"></span>
+      <span class="toggle-text">Dark</span>
+    </button>
     <div class="site-shell">
       <aside class="identity-rail" aria-label="Site identity">
         <a class="brand" href="#top" aria-label="Gavin Wang home">
@@ -29,6 +33,7 @@
           <p>AI workflow automation experience</p>
         </div>
         <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#top">00 / About Me</a>
           <a href="#featured-project">01 / Featured Project</a>
           <a href="#selected-work">02 / Selected Work</a>
           <a href="#experience">03 / Experience</a>
@@ -36,10 +41,6 @@
           <a href="#education">05 / Education</a>
           <a href="#contact">06 / Contact</a>
         </nav>
-        <button class="theme-toggle" type="button" aria-label="Toggle dark mode">
-          <span class="toggle-dot"></span>
-          <span class="toggle-text">Dark</span>
-        </button>
       </aside>
 
       <main id="top" class="content-column">
@@ -115,8 +116,8 @@
               />
               <img
                 class="artifact-image artifact-dark"
-                src="assets/workflow-assistant-dashboard.png"
-                alt="Dark mode AI Job Application Workflow Assistant dashboard"
+                src="assets/ai-helper-latest-tailor-dark.png"
+                alt="Dark mode AI Job Application Helper resume tailoring workspace"
               />
               <figcaption>Artifact switches with the site theme: resume tailoring workspace in light mode, workflow assistant dashboard in dark mode.</figcaption>
             </figure>
