@@ -104,8 +104,9 @@ a {
 }
 
 .rail-portrait {
-  width: 74px;
-  height: 92px;
+  width: 200px;
+  aspect-ratio: 4 / 5;
+  height: auto;
   margin-top: 72px;
   object-fit: cover;
   object-position: center 30%;
